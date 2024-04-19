@@ -24,6 +24,15 @@
         <br>
         eaglercraft was made by lax1dude and ayunami2000<br>
         minecraft was made by mojang<br>
+
+        <br><br>
+        <u>changelog</u>
+        <pre>
+            1.0 - initial release
+            1.1
+                - added the changelog!
+                - added splash text
+        </pre>
     </div>
 
     <!-- promo 😝 -->
@@ -47,6 +56,10 @@
     </div>
 
 
+    <div class="userinfo">
+        loading...
+    </div>
+
     <div class="versel">
         <div>
             <p>idk why theey are alligned like that sry</p> <br><br><br>
@@ -58,11 +71,11 @@
         </div>
     </div>
 
-    <p class="splash">
+    <p class="splash" onclick="picksplash()">
         what The freak !!
     </p>
 
-
+    
 
     <button id="moreoptions" onclick="moreoptions()">moreoptions</button>
     <div class="moreoptions">
@@ -74,8 +87,23 @@
         </div>
     </div>
 
+    <div class="logincontainer">
+        <button class="closelogin" onclick="login(-1)">Close login screen</button>
+        <p>Log in</p>
+        <input type="text" id="username" placeholder="username">
+        <input type="password" id="password" placeholder="password"><br>
+        <button style="margin-left: 150px" onclick="login(1)">Login</button>
+        <hr>
+        <p>Sign up</p>
+        <input type="text" id="username" placeholder="username">
+        <input type="password" id="password" placeholder="password"><br>
+        <button style="margin-left: 150px" onclick="login(2)">Signup</button>
+        <hr><br>
+        <button style="margin-left: 150px; color:red;">delete account</button>
+    </div>
         <img src="assets/SUPERLSD.gif" alt="" class="superlsdgif">
 
+        <script src="assets/splashes.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
