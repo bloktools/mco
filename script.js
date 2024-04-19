@@ -116,6 +116,12 @@ $('.logincontainer').hide();
                 loginstatus=1;
                 $('.logincontainer').hide();
                 $('#playbutton').show();
+
+                $('.userinfo').html(` <p>Welcome, ${localStorage.getItem('skibidiusername')}!</p>
+                    <br><br><br>
+                    <button onclick="login(0)">Login screen</button>`);
+                    $('#delacc').show();
+                    $('.logincontainer>input').hide();
             } else {
                 alert('wrong info!');
                 location.reload();
@@ -127,11 +133,25 @@ $('.logincontainer').hide();
     } else if (a==2) {
         if (localStorage.getItem('skibidiusername')) {
             alert('must delete old account first');
-        }
-        if (localStorage.getItem('skibidipassword')) {
-            alert('must delete old account first');
+            location.reload();
+        } else {
+            if (localStorage.getItem('skibidipassword')) {
+                alert('must delete old account first');
+                location.reload();
+            } else {
+
+                localStorage.setItem('skibidiusername', $('#username-su').val());
+                localStorage.setItem('skibidipassword', $('#password-su').val());
+                alert('account created .');
+                location.reload();
+            }
+
         }
 
-        
     }
 }
+
+window.addEventListener("load", (e) => {
+    $('.loading').text('waitinf for scripts to finish');
+    setTimeout(()=>{$('.loading').hide()},300);
+  });  
