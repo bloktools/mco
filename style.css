@@ -1,0 +1,250 @@
+@font-face {
+    font-family: Minecraft;
+    src: url(assets/font/MinecraftRegular-Bmg3.otf);
+}
+@keyframes splashanimation {
+    0% {
+        scale: 1;
+    }
+    15% {
+        scale: 1.02;
+    }
+    35% {
+        scale: 1.05;
+    }
+    50% {
+        scale: 1.1;
+    }
+    65% {
+        scale: 1.05;
+    }
+    85% {
+        scale: 1.02;
+    }
+}
+
+@keyframes lsd {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+@keyframes superlsd {
+    0% {
+        transform: translateY(0px) rotate(0deg) scale(1);
+        filter: hue-rotate(0deg) saturate(5);
+    }
+    20% {
+        transform: translateY(400px) rotate(360deg) scale(1.5);
+        filter: hue-rotate(360deg) saturate(5);
+    }
+    40% {
+        transform: translateY(0px) rotate(720deg) scale(1);
+        filter: hue-rotate(720deg) saturate(5);
+    }
+    60% {
+        transform: translateY(-400px) rotate(1080deg) scale(1.5);
+        filter: hue-rotate(1080deg) saturate(5);
+    }
+    80% {
+        transform: translateY(0px) rotate(1440deg) scale(2);
+        filter: hue-rotate(1440deg) saturate(5);
+    }
+    100% {
+        transform: translateY(400px) rotate(1800deg) scale(1);
+        filter: hue-rotate(1800deg) saturate(5);
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Minecraft, sans-serif;
+    user-select: none; 
+    /* fuck u dont select sh */
+}
+.stonebackground {
+    position: fixed;
+    background-image: url(assets/stone.png);
+    width: 100svw;
+    height: 100svh;
+    background-size: 64px;
+}
+.stonebackgroundoverlay {
+    background: black;
+    width: 100svw;
+    height: 100svh;
+    position: fixed;
+    opacity: 0.7;
+}
+
+.bottom-background {
+    width: 100svw;
+    height: 256px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-image: url(assets/background.png);
+    border-top: 1px solid white;
+}
+
+.bottom {
+    width: 100svw;
+    height: 256px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom, #000000, #000000bb, #00000066);
+    color: white;
+    text-align: center;
+}
+
+
+button {
+    background-image: url(assets/button/mid.png);
+    height: 20px;
+    transform: scale(2);
+    border: none;
+    font-size: 10px;
+    color: white;
+    text-shadow: 1px 1px 0px #000;
+    padding: 0 2px;
+}
+button:before {
+    content: '';
+    position: absolute;
+    height: 20px;
+    width: 10px;
+    left: -9.5px;
+    top: 0;
+    background-image: url(assets/button/left.png);
+}
+button:after {
+    content: '';
+    position: absolute;
+    height: 20px;
+    width: 13px;
+    right: -12px;
+    top: 0;
+    background-image: url(assets/button/right.png);
+}
+
+button:hover {
+    color: #FFFF55;
+    background: url(assets/button/mid_sel.png);
+    text-shadow: 1px 1px 0px #3f3f00;
+}
+button:hover::before {
+    background: url(assets/button/left_sel.png);
+}
+button:hover::after {
+    background: url(assets/button/right_sel.png);
+}
+
+.versel {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    width: 100svw;
+    height: 100svh;
+    position: fixed;
+    background: url(assets/background.png);
+}
+
+p, pre {
+    font-size: 22px;
+    color: white;
+    text-shadow: 2px 2px 0px #000;
+}
+
+pre {
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: none;
+    font-size: 16px;
+}
+
+.promo {
+    position: fixed;
+    width: 256px;
+    height: 512px;
+    background-color: black;
+    right: 0;
+    top: 256px;
+    text-align: center;
+    color: #fff;
+}
+
+.splash {
+    display: block;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    color: #ffff00;
+    transform: rotate(-20deg);
+    animation: 0.5s linear splashanimation infinite;
+    text-shadow: 2px 2px 0px #3f3f00;
+}
+
+#playbutton {
+    animation: 2s linear lsd infinite;
+}
+
+#moreoptions{
+    transform: scale(1);
+    position: fixed;
+    right: 13px;
+    top: 1px;
+}
+
+.moreoptions {
+    width: 300px;
+    height: 150px;
+    background: url(assets/gay_bg.jpg);
+    background-size: cover;
+    position: fixed;
+    left: 300px;
+    top: 200px;
+    z-index: 5;
+}
+.moreoptions > button {
+    transform: scale(1);
+    margin-left: 10px;
+}
+.centaralign {
+    width: 100%;
+    text-align: center;
+}
+
+.flow {
+    position: fixed;
+    left: 20vw;
+    width: 50vw;
+    height: 70svh;
+    top: 5svh;
+    text-align: center;
+    color: white;
+    font-family: Helvetica, Arial, sans-serif !important;
+    text-shadow: none;
+}
+.flow * {
+    font-family: Helvetica, Arial, sans-serif !important;
+    text-shadow: none;
+}
+
+.superlsdgif {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    mix-blend-mode: multiply;
+    display: none;
+}
+
+#audio {
+    position: fixed;
+    left: 55px;
+    bottom: 30px;
+    z-index: 1;
+    color: yellow;
+}
