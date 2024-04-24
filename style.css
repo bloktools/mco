@@ -319,3 +319,11 @@ input::-webkit-input-placeholder {
     justify-content: center;
     font-family: sans-serif;
 }
+
+.captcha {
+    
+}
+
+.captchaimg {
+    background: white;
+}

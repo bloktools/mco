@@ -7,6 +7,7 @@
     <title>Portal</title>
     <link rel="icon" href="https://focus.pcsb.org/focus/assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
     <!-- contains the stuff -->
@@ -70,7 +71,12 @@
 
 
         <div class="userinfo">
-            loading...
+            Verify you are not a robot <br><br>
+            <button onclick="captcha()">verify</button>
+            <br><br><br><br>
+            <div class="captcha">
+                <canvas class="captchaimg" width="100" height="33"></canvas>
+            </div>
         </div>
 
         <div class="versel">
@@ -99,7 +105,7 @@
                 <p>OVERRIDES UR AUDIO SETTING!!</p>
             </div>
         </div>
-
+<!-- 
         <div class="logincontainer">
             <button class="closelogin" onclick="login(-1)" style="position:absolute;right:30px;top:12px;">X</button>
             <p>Log in</p>
@@ -113,7 +119,7 @@
             <button style="margin-left: 150px" onclick="login(2)">Signup</button>
             <hr><br>
             <button id=delacc style="margin-left: 150px; color:red; display: none;">delete account</button>
-        </div>
+        </div> -->
             <img src="assets/SUPERLSD.gif" alt="" class="superlsdgif">
 
 
