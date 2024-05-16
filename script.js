@@ -241,4 +241,52 @@ setTimeout(() => {
     }
 },200)
 
+
+
 }
+
+
+$('.rendercolors').each(function () {
+    const str = $(this).text()
+    const length = str.length
+    let finalstring = '';
+    let skip = 0;
+    for (i = 0; i < length; i++) {
+        if (skip==1) {
+            skip = 0;
+        } else {
+            letter = str.charAt(i)
+            let appendltr = letter
+            if (letter == '§') {
+                const color = str.charAt(i+1);
+                let finalcolor;
+                switch (color) {
+                    case '0': finalcolor = '#000000'; break;
+                    case '1': finalcolor = '#0000aa'; break;
+                    case '2': finalcolor = '#00aa00'; break;
+                    case '3': finalcolor = '#00aaaa'; break;
+                    case '4': finalcolor = '#aa0000'; break;
+                    case '5': finalcolor = '#aa00aa'; break;
+                    case '6': finalcolor = '#ffaa00'; break;
+                    case '7': finalcolor = '#aaaaaa'; break;
+                    case '8': finalcolor = '#555555'; break;
+                    case '9': finalcolor = '#5555ff'; break;
+                    case 'a': finalcolor = '#55ff55'; break;
+                    case 'b': finalcolor = '#55ffff'; break;
+                    case 'c': finalcolor = '#ff5555'; break;
+                    case 'd': finalcolor = '#ff55ff'; break;
+                    case 'e': finalcolor = '#ffff55'; break;
+                    case 'f': finalcolor = '#ffffff'; break;
+                    case 'g': finalcolor = '#ddd605'; break;
+                    default: finalcolor = '#ffffff'; break;
+                }
+                appendltr = `<span style='color:${finalcolor}'>`
+                skip = 1;
+            }
+            console.log(appendltr);
+            finalstring+=appendltr
+        }
+    }
+    console.log(finalstring);
+    $(this).html(finalstring);
+})

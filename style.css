@@ -158,16 +158,26 @@ button:hover::after {
     display: grid;
     align-items: center;
     justify-content: center;
-    width: 100svw;
-    height: 100svh;
+    width: 120px;
+    height: 100px;
+    overflow-y: scroll;
     position: fixed;
     background: url(assets/background.png);
+    z-index: 10000;
+    bottom: 230px;
+    left: calc(50vw - 60px);
+}
+.versel button {
+    scale: 0.6 !important;
+    width: 100%;
 }
 
 p, pre {
     font-size: 22px;
     color: white;
     text-shadow: 2px 2px 0px #000;
+    overflow-y: scroll;
+    max-height: calc(60svh - 256px);
 }
 
 pre {
@@ -305,6 +315,7 @@ input::-webkit-input-placeholder {
     top: 200px;
     box-sizing: border-box;
     padding: 40px;
+    overflow: scroll;
 }
 
 .loading {
