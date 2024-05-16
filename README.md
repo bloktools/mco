@@ -1,7 +1,7 @@
 ## skibidi minecraft
 
 ```
-=====Online Minecraft Launcher=====.
+=====Online Minecraft Launcher=====
 
 skibidiminecraft is a web-based
 minecraft launcher for eaglercraft,
