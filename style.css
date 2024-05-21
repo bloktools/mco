@@ -33,27 +33,39 @@
 }
 @keyframes superlsd {
     0% {
-        transform: translateY(0px) rotate(0deg) scale(1);
+        transform: translateY(0px) rotate(0deg) scale(2);
         filter: hue-rotate(0deg) saturate(5);
     }
-    20% {
-        transform: translateY(400px) rotate(360deg) scale(1.5);
+    12.5% {
+        transform: translateY(500px) rotate(90deg) scale(1);
+        filter: hue-rotate(0deg) saturate(5);
+    }
+    25% {
+        transform: translateY(0px) rotate(180deg) scale(2);
         filter: hue-rotate(360deg) saturate(5);
     }
-    40% {
-        transform: translateY(0px) rotate(720deg) scale(1);
+    37.5% {
+        transform: translateY(500px) rotate(270deg) scale(1);
+        filter: hue-rotate(0deg) saturate(5);
+    }
+    50% {
+        transform: translateY(0px) rotate(360deg) scale(2);
         filter: hue-rotate(720deg) saturate(5);
     }
-    60% {
-        transform: translateY(-400px) rotate(1080deg) scale(1.5);
+    62.5% {
+        transform: translateY(500px) rotate(450deg) scale(1);
+        filter: hue-rotate(720deg) saturate(5);
+    }
+    75% {
+        transform: translateY(0px) rotate(540deg) scale(2);
         filter: hue-rotate(1080deg) saturate(5);
     }
-    80% {
-        transform: translateY(0px) rotate(1440deg) scale(2);
-        filter: hue-rotate(1440deg) saturate(5);
+    87.5% {
+        transform: translateY(500px) rotate(630deg) scale(1);
+        filter: hue-rotate(720deg) saturate(5);
     }
     100% {
-        transform: translateY(400px) rotate(1800deg) scale(1);
+        transform: translateY(0px) rotate(720deg) scale(2);
         filter: hue-rotate(1800deg) saturate(5);
     }
 }
@@ -65,6 +77,8 @@
     user-select: none; 
     font-smooth: never;
     -webkit-font-smoothing : none;
+    overflow: hidden;
+    
     /* fuck u dont select sh */
 }
 
@@ -110,6 +124,7 @@ body {
     background-image: linear-gradient(to bottom, #000000, #000000bb, #00000066);
     color: white;
     text-align: center;
+    overflow: hidden;
 }
 
 
@@ -122,6 +137,7 @@ button {
     color: white;
     text-shadow: 1px 1px 0px #000;
     padding: 0 2px;
+    overflow: visible;
 }
 button:before {
     content: '';
@@ -207,6 +223,7 @@ pre {
     transform: rotate(-20deg);
     animation: 0.5s linear splashanimation infinite;
     text-shadow: 2px 2px 0px #3f3f00;
+    overflow: hidden;
 }
 
 #playbutton {
@@ -280,6 +297,7 @@ pre {
     right: 0;
     bottom: 0;
     color: white;
+    overflow: visible;
 }
 
 .logincontainer {
@@ -331,10 +349,12 @@ input::-webkit-input-placeholder {
     font-family: sans-serif;
 }
 
-.captcha {
-    
-}
 
 .captchaimg {
     background: white;
+}
+a {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
 }

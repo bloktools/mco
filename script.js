@@ -18,8 +18,10 @@ const animatemeuwu = [
     'input'
 ];
 $('#playbutton').hide();
+$('.extras').hide();
 
 $('.versel').hide()
+$('.captcha').hide()
 $('.moreoptions').hide()
 picksplash();
 
@@ -70,7 +72,9 @@ function closemoreoptions() {
 
 function superlsd() {
     for ( i=0; i<animatemeuwu.length; i++) {
-        $(animatemeuwu[i]).css('animation', '10s infinite superlsd linear');
+        $(animatemeuwu[i]).show();
+        $(animatemeuwu[i]).css('animation', '1.71428571429s infinite superlsd linear');
+        $(animatemeuwu[i]).css('overflow', 'visible !important');
     }
     var audio = new Audio('assets/pornstarsong.mp3');
     audio.play();
@@ -82,7 +86,7 @@ $('#audio').on('click', function () {
 })
 
 function playthegame() {
-    console.log('eagerz/'+version+'.html')
+    
     window.location.assign('eagerz/'+version+'.html') 
 }
 
@@ -166,6 +170,10 @@ window.addEventListener("load", (e) => {
   }
 
   function captcha() {
+$('.captcha').show()
+
+setTimeout(function () {
+
     const captchashi = [
         'a',
         'b',
@@ -235,13 +243,17 @@ setTimeout(() => {
     if (respons==arraycaptcha[0]+arraycaptcha[1]+arraycaptcha[2]+arraycaptcha[3]+arraycaptcha[4]) {
         $('.userinfo').text('verified :)');
         $('#playbutton').show();
+        $('.captcha').hide()
     } else {
         alert('boo u suck')
         location.reload();
+        $('.captcha').hide()
     }
 },200)
 
 
+
+}, 200)
 
 }
 
@@ -283,10 +295,14 @@ $('.rendercolors').each(function () {
                 appendltr = `<span style='color:${finalcolor}'>`
                 skip = 1;
             }
-            console.log(appendltr);
+            
             finalstring+=appendltr
         }
     }
-    console.log(finalstring);
+    
     $(this).html(finalstring);
 })
+
+function texturepacks() {
+    $('.extras').toggle();
+}
