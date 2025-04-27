@@ -25,22 +25,24 @@ $('.captcha').hide()
 $('.moreoptions').hide()
 picksplash();
 
-$('button').on('click', () => {
-    if (globalSound==1 ) {
-        var audio = new Audio('assets/clickysound2.ogg');
-        audio.play();
-    }
-})
+// $('button').on('click', () => {
+//     if (globalSound==1 ) {
+//         var audio = new Audio('assets/clickysound2.ogg');
+//         audio.play();
+//     }
+// })
 
 function verSel(a) {
     $('.versel').show();
+    $('#main-window').removeClass('active');
     if (a=='close') {
         $('.versel').hide();
-    }
+    $('#main-window').addClass('active');
+}
 }
 
 setInterval(function () {
-    $('#currentver').text('current version: '+shownversion);
+    $('#currentver').text('Current version: '+shownversion);
     if (globalSound==1) {
         $('#audio').css('color', '#00ff00');
     } else {
@@ -63,11 +65,13 @@ function setver(ver, sver) {
 
 function moreoptions() {
     $('.moreoptions').show();
+        $('#main-window').removeClass('active');
     handleClick();
 }
 
 function closemoreoptions() {
     $('.moreoptions').hide();
+    $('#main-window').addClass('active');
 }
 
 function superlsd() {
@@ -158,8 +162,11 @@ $('.logincontainer').hide();
     }
 }
 */
+
+let arraycaptcha = [];
+
 window.addEventListener("load", (e) => {
-    $('.loading').text('waitinf for scripts to finish');
+    $('.loading').text('Loading...');
     setTimeout(()=>{$('.loading').hide()},300);
   });  
 
@@ -211,7 +218,7 @@ setTimeout(function () {
         '8',
         '9'
     ];
-    var arraycaptcha = [
+    arraycaptcha = [
         captchashi[Math.floor(Math.random()*captchashi.length)],
         captchashi[Math.floor(Math.random()*captchashi.length)],
         captchashi[Math.floor(Math.random()*captchashi.length)],
@@ -238,24 +245,40 @@ ctx.lineTo(100, rand);
 ctx.stroke();
   }
 
-setTimeout(() => {
-    let respons = prompt('what letters are being displayed in the captcha box (its by the verify button u just pressed)');
-    if (respons==arraycaptcha[0]+arraycaptcha[1]+arraycaptcha[2]+arraycaptcha[3]+arraycaptcha[4]) {
-        $('.userinfo').text('verified :)');
-        $('#playbutton').show();
-        $('.captcha').hide()
-    } else {
-        alert('boo u suck')
-        location.reload();
-        $('.captcha').hide()
-    }
-},200)
+// setTimeout(() => {
+//     let respons = prompt('what letters are being displayed in the captcha box (its by the verify button u just pressed)');
+//     if (respons==arraycaptcha[0]+arraycaptcha[1]+arraycaptcha[2]+arraycaptcha[3]+arraycaptcha[4]) {
+//         $('.userinfo').text('verified :)');
+//         $('#playbutton').show();
+//         $('.captcha').hide()
+//         $('.userinfo').hide()
+//     } else {
+//         alert('boo u suck')
+//         location.reload();
+//         $('.captcha').hide()
+//     }
+// },200)
 
 
 
 }, 200)
 
 }
+$('#verify').on('click', function () {
+    const response = $('#captchainput').val()
+    if (response==arraycaptcha[0]+arraycaptcha[1]+arraycaptcha[2]+arraycaptcha[3]+arraycaptcha[4]) {
+        $('.userinfo').text('verified :)');
+        $('#playbutton').show();
+        $('.captcha').hide()
+        $('.userinfo').hide()
+        sessionStorage.setItem('mco-logged-in', 1);
+        $('#main-window').addClass('active');
+    } else {
+        alert('boo u suck')
+        location.reload();
+        $('.captcha').hide()
+    }
+})
 
 
 $('.rendercolors').each(function () {
@@ -306,3 +329,6 @@ $('.rendercolors').each(function () {
 function texturepacks() {
     $('.extras').toggle();
 }
+$(()=>{
+    captcha();
+})

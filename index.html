@@ -7,291 +7,332 @@
     <title>Portal</title>
     <link rel="icon" href="https://focus.pcsb.org/focus/assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/7.css">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
     <!-- contains the stuff -->
+
+
+
     <div class="loading">
         downloading resources
     </div>
 
-    <div class="container">
+<div class="window" id="main-window">
+    <div class="title-bar">
+        <div class="title-bar-text">Minecraft-Online Launcher 1.5</div>
+        <div class="title-bar-controls">
+            <button aria-label="Minimize"></button>
+            <button aria-label="Maximize"></button>
+            <button aria-label="Close"></button>
+        </div>
+    </div>
+    <div class="window-body">
+        <div class="container">
 
-        <div class="stonebackground"></div>
-        <div class="stonebackgroundoverlay"></div>
-
-            <button id="audio">audio</button>
-        <div class="flow">
+            <div class="stonebackground"></div>
+            <div class="stonebackgroundoverlay"></div>
+    
+                <!-- <button id="audio">audio</button> -->
+            <div class="flow">
+                <h3>Minecraft-Online News</h3>
+                <br>
+                <a onclick="texturepacks()" style="background:#eee;font-size:12px;">Texture Packs</a>
+                <br>
+                <br>
+                eaglercraft was made by lax1dude and ayunami2000<br>
+                minecraft was made by mojang<br>
+    
+                <br><br><br><br><br>
+                <u>Minecraft-Online 1.5</u><br><br>
+                    - made launcher more faithful to the old minecraft launcher <br>
+                    - updated eaglercraftx to u50 <br>
+                    - added eaglercraft 1.12.2 <br>
+                    - updated eaglercraft 1.5.2 <br>
+                    - use 7.css to mimic windows 7 windows and buttons <br>
+                    <br><br><br>
+                <u>Minecraft-Online 1.4.1</u><br><br>
+                    - slight tweaks to the menu <br>
+                    - updated eaglercraftx to u30 <br><br><br><br>
+                <u>Minecraft-Online 1.4</u> <br><br>
+                    - added texture packs to the launcher <br>
+                    - added more versions of the game <br>
+                    - revamped version selector <br><br><br><br>
+                <u>Minecraft-Online 1.3</u> <br><br> 
+                    - updated eaglercraftx to u29 <br>
+                    - changed loading screen for eagx a lil bit <br>
+                    - removed login system in favor of captcha system <br>
+                    - set something about relays to shhnowisnottheti.me (maybe default lol idk) <br><br><br><br>
+                <u>Minecraft-Online 1.2</u> <br><br>
+                    - updated eaglercraftx to u28 <br><br><br><br>
+                <u>Minecraft-Online 1.1</u> <br><br>
+                    - added the changelog! <br>
+                    - added splash text <br>
+                    - added login system (sry there was bots) <br>
+                    - added pane on the left for stuff like texture packs <br><br><br><br>
+                <u>Minecraft-Online 1.0</u> <br><br>
+                - initial release <br><br><br><br>
+    
+            </div>
+    
+            <!-- promo 😝 -->
+            <!-- update i got rid of the section -->
+            <!-- <div class="promo">
+                <h1>promo</h1>
+        <br><br>
+                <a href="https://www.youtube.com/@realprodbychime"><button>music</button></a><br><br>
+            </div> --> 
+    
+            <!-- bottom part with version selector -->
+            <div class="bottom-background">
+    
+            </div>
+            <div class="bottom">
+                <br>
+                <span id="currentver">Loading...</span>
+                <button onclick="verSel('')" class="win7">Choose Version</button><br><br>
+               
+            </div>
+    
+            <button onclick="playthegame()" class="playyy">Play</button>
+    
+    
             <img src="assets/crash_logo.png" alt="" class="mccl">
-            <br><br>
-
-            <h1>LOCK IN</h1>
-            u do not have skibidi rizz :)
-            <br>
-            <a href="discord.gg/3MAR9Jnu">join the discord!</a>
-            <a onclick="texturepacks()">Texture Packs</a>
-            <br>
-            <br>
-            eaglercraft was made by lax1dude and ayunami2000<br>
-            minecraft was made by mojang<br>
-
-            <br><br>
-            <u>changelog</u>
-            <pre>
-                1.0 - initial release
-                1.1
-                    - added the changelog!
-                    - added splash text
-                    - added login system (sry there was bots)
-                    - added pane on the left for stuff like texture packs
-                1.2
-                    - updated eaglercraftx to u28
-                1.3 
-                    - updated eaglercraftx to u29
-                    - changed loading screen for eagx a lil bit
-                    - removed login system in favor of captcha system
-                    - set something about relays to shhnowisnottheti.me (maybe default lol idk)
-                1.4
-                    - added texture packs to the launcher
-                    - added more versions of the game
-                    - revamped version selector
-				1.4.1
-					- slight tweaks to the menu
-					- updatred eaglercraftx to u30
-
-            </pre>
-        </div>
-
-        <!-- promo 😝 -->
-        <!-- update i got rid of the section -->
-        <!-- <div class="promo">
-            <h1>promo</h1>
-    <br><br>
-            <a href="https://www.youtube.com/@realprodbychime"><button>music</button></a><br><br>
-        </div> --> 
-
-        <!-- bottom part with version selector -->
-        <div class="bottom-background">
-
-        </div>
-        <div class="bottom"> 
-            <br><br><br>
-            <button onclick="verSel('')">select version</button><br><br>
-            <p id="currentver">loiading the version</p>
-            <br><br><br>
-            <button style="transform:scale(3)" id="playbutton" onclick="playthegame()">play!!</button>
-        </div>
-
-
-        <div class="userinfo">
-            Verify you are not a robot <br><br>
-            <button onclick="captcha()">verify</button>
-            <br><br><br><br>
-            <div class="captcha">
-                <canvas class="captchaimg" width="100" height="33"></canvas>
+    
+    
+            <div class="userinfo">
+                <div class="window active">
+                    <div class="title-bar">
+                        <div class="title-bar-text">Verify you are not a robot.</div>
+                    </div>
+                    <div class="window-body has-space">
+                        <div style="text-align: center;">
+                            <div class="captcha" style="transform:scale(2)"></div>
+                                <canvas class="captchaimg" width="100" height="33"></canvas><br>
+                            <input type="text" id="captchainput" length="5" style="width:60px" placeholder="Captcha">
+                            <button id="verify">Verify</button>
+                        </div>
+    
+                    </div>
+                </div>
+                
+                </div>
+     
+            
+            <div class="versel">
+                <div class="window active">
+                    <div class="title-bar">
+                        <div class="title-bar-text">Choose Version</div>
+                        <div class="title-bar-controls">
+                            <button aria-label="Close" onclick="verSel('close')"></button>
+                        </div>
+                    </div>
+                    <div class="window-body has-space">
+                        <button onclick="setver('eag12', '1.12.2')">1.12.2</button><br>
+                        <button onclick="setver('eagx', '1.8.8')">1.8.8</button><br>
+                        <button onclick="setver('eag', '1.5.2')">1.5.2</button><br>
+                        <button onclick="setver('eagbeta', 'b1.3')">beta 1.3</button><br>
+                        <button onclick="setver('eagalpha', 'a1.2.6')" >alpha 1.2.6</button><br>
+                        <button onclick="setver('eagindev', 'infdev')" >infdev</button><br>
+                        <button onclick="setver('eaginfdev', 'indev')" >indev</button><br>
+                        <button onclick="setver('eagclassic', 'survival test 0.30')" >classic 0.30</button>
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <div class="versel">
-            <div><br>
-                <button onclick="setver('eagx', '1.8.8')">1.8.8</button><br>
-                <button onclick="setver('eag', '1.5.2')">1.5.2</button><br>
-                <button onclick="setver('eagbeta', 'b1.3')">beta 1.3</button><br>
-                <button onclick="setver('eagalpha', 'a1.2.6')" >alpha 1.2.6</button><br>
-                <button onclick="setver('eagindev', 'infdev')" >infdev</button><br>
-                <button onclick="setver('eaginfdev', 'indev')" >indev</button><br>
-                <button onclick="setver('eagclassic', 'survival test 0.30')" >classic 0.30</button><br><br><br>
-                <button onclick="verSel('close')">close</button><br>
+            
+    
+            <!-- <p class="splash" onclick="picksplash()">
+                what The freak !!
+            </p> -->
+    
+            <div class="emo" style="display: none;"></div>
+    
+            <!-- <button id="moreoptions" onclick="moreoptions()">moreoptions</button> -->
+            <div class="moreoptions">
+                <button onclick="closemoreoptions()" style="float:right;margin-right:12px;">X</button>
+                <br><br><br>
+                <div class="centaralign">
+                    <button onclick="superlsd()">super party mode!!1!</button><br><br>
+                    <p>OVERRIDES UR AUDIO SETTING!!</p>
+                </div>
             </div>
-        </div>
-
-        <p class="splash" onclick="picksplash()">
-            what The freak !!
-        </p>
-
-        <div class="emo" style="display: none;"></div>
-
-        <button id="moreoptions" onclick="moreoptions()">moreoptions</button>
-        <div class="moreoptions">
-            <button onclick="closemoreoptions()" style="float:right;margin-right:12px;">X</button>
-            <br><br><br>
-            <div class="centaralign">
-                <button onclick="superlsd()">super party mode!!1!</button><br><br>
-                <p>OVERRIDES UR AUDIO SETTING!!</p>
-            </div>
-        </div>
-<!-- 
-        <div class="logincontainer">
-            <button class="closelogin" onclick="login(-1)" style="position:absolute;right:30px;top:12px;">X</button>
-            <p>Log in</p>
-            <input type="text" id="username" placeholder="username">
-            <input type="password" id="password" placeholder="password"><br>
-            <button style="margin-left: 150px" onclick="login(1)">Login</button>
-            <hr>
-            <p>Sign up</p>
-            <input type="text" id="username-su" placeholder="username">
-            <input type="password" id="password-su" placeholder="password"><br>
-            <button style="margin-left: 150px" onclick="login(2)">Signup</button>
-            <hr><br>
-            <button id=delacc style="margin-left: 150px; color:red; display: none;">delete account</button>
-        </div> -->
-            <img src="assets/SUPERLSD.gif" alt="" class="superlsdgif">
-
-
-<div class="extras">
-    <u>texture packs 1.8.9</u>
+    <!-- 
+            <div class="logincontainer">
+                <button class="closelogin" onclick="login(-1)" style="position:absolute;right:30px;top:12px;">X</button>
+                <p>Log in</p>
+                <input type="text" id="username" placeholder="username">
+                <input type="password" id="password" placeholder="password"><br>
+                <button style="margin-left: 150px" onclick="login(1)">Login</button>
+                <hr>
+                <p>Sign up</p>
+                <input type="text" id="username-su" placeholder="username">
+                <input type="password" id="password-su" placeholder="password"><br>
+                <button style="margin-left: 150px" onclick="login(2)">Signup</button>
+                <hr><br>
+                <button id=delacc style="margin-left: 150px; color:red; display: none;">delete account</button>
+            </div> -->
+                <img src="assets/SUPERLSD.gif" alt="" class="superlsdgif">
+    
+    
+    <div class="extras">
+        <u>texture packs 1.8.9</u>
+        <br><br>
+        <a href="assets/PACKS/188/! §cFlanery §6V-Blaze §d[§c64x§d].zip"><button style="scale: 0.7">
+    
+            ! <span style="color:#ff5555">Flanery</span> <span style="color:#ffaa00">V-Blaze</span> <span style="color:#ff55ff">[</span><span style="color:#ff5555">64x</span><span style="color:#ff55ff">]</span>
+    
+        </button></a>
+        <br><br>
+        <a href="assets/PACKS/188/Just FPS Pack 8x8 for PVP 1.8.9.zip"><button style="scale: 0.7">
+    
+            Just FPS Pack 8x8 for PVP 1...
+    
+        </button></a>
     <br><br>
-    <a href="assets/PACKS/188/! §cFlanery §6V-Blaze §d[§c64x§d].zip"><button style="scale: 0.7">
-
-        ! <span style="color:#ff5555">Flanery</span> <span style="color:#ffaa00">V-Blaze</span> <span style="color:#ff55ff">[</span><span style="color:#ff5555">64x</span><span style="color:#ff55ff">]</span>
-
-    </button></a>
-    <br><br>
-    <a href="assets/PACKS/188/Just FPS Pack 8x8 for PVP 1.8.9.zip"><button style="scale: 0.7">
-
-        Just FPS Pack 8x8 for PVP 1...
-
-    </button></a>
-<br><br>
-<a href="assets/PACKS/188/§eZoudy§6Fault §7[§616x§7].zip"><button style="scale: 0.7">
-
-    <span style="color:#ffff55;">Zoudy</span><span style="color:#ffaa00">Fault</span> <span style="color:#aaa">[</span><span style="color:#ffaa00">16x</span><span style="color:#aaa">]</span>
-
-</button></a><br><br>
-
-<a href="assets/PACKS/188/easyblockspvp-e3380.zip"><button style="scale: 0.7">
-
-    easyblockspvp-e3380
-
-</button></a>
-<br><br>
-<a href="assets/PACKS/188/Bare Bones 1.8.9.zip"><button style="scale: 0.7">
-
-    Bare Bones 1.8.9
-
-</button></a>
-<br><br>
-<a href="assets/PACKS/188/nw/!                 §5tóxica §816x.zip"><button style="scale: 0.7">
-    <span class="rendercolors">§5tóxica §816x</span>
-</button></a>
-<br><br>
-<a href="assets/PACKS/188/nw/!               §4Spider§f-§1Man§4[§f§lPACK§1] §8.zip"><button style="scale: 0.7">
-    <span class="rendercolors">§4Spider§f-§1Man§4[§f§lPACK§1] §8</span>
-</button></a>
-<br><br>
-<a href="assets/PACKS/188/nw/!         §6Vap§corw§5ave §1[§f16x§1].zip"><button style="scale: 0.7">
-    <span class="rendercolors">§6Vap§corw§5ave §1[§f16x§1]</span>
-</button></a>
-<br><br>
-<a href="assets/PACKS/188/nw/!         §b§lBombies §8[§f180k§8].zip"><button style="scale: 0.7">
-    <span class="rendercolors">§b§lBombies §8[§f180k§8]</span>
-</button></a>
-<br><br>
-<a href="assets/PACKS/188/nw/!       §b§l§oTofault §f§l§o16x.zip"><button style="scale: 0.7">
-    <span class="rendercolors">§b§l§oTofault §f§l§o16x</span>
-</button></a>
-<br><br>
-<a href="assets/PACKS/188/nw/!      §bnebu§3l§ba §8[§f16§5x§8].zip"><button style="scale: 0.7">
-    <span class="rendercolors">§bnebu§3l§ba §8[§f16§5x§8]</span>
-</button></a>
-<br><br>
-<a href="assets/PACKS/188/nw/!      §bnebu§3l§ba §8[§f32§5x§8].zip"><button style="scale: 0.7">
-    <span class="rendercolors">§bnebu§3l§ba §8[§f32§5x§8]</span>
-</button></a>
-<br><br>
-<a href="assets/PACKS/188/nw/!      §fp§9rism §8[§f16§9x§8].zip"><button style="scale: 0.7">
-    <span class="rendercolors">§fp§9rism §8[§f16§9x§8]</span>
-</button></a>
-<br><br>
-<a href="assets/PACKS/188/nw/!     §bfat cat §f[§b16§7x§f].zip"><button style="scale: 0.7">
-    <span class="rendercolors">§bfat cat §f[§b16§7x§f]</span>
-</button></a>
-<br><br>
-<a href="assets/PACKS/188/nw/!  §5amethyst §8[§f16§5x§8].zip"><button style="scale: 0.7">
-    <span class="rendercolors">§5amethyst §8[§f16§5x§8]</span>
-</button></a>
-<br><br>
-<a href="assets/PACKS/188/nw/!  §bxlexxd v3 §8[§f16x§8].zip"><button style="scale: 0.7">
-    <span class="rendercolors">§bxlexxd v3 §8[§f16x§8]</span>
-</button></a>
-<br><br>
-<a href="assets/PACKS/188/nw/! §9Blue §7Revamp §8§f128x§8.zip"><button style="scale: 0.7">
-    <span class="rendercolors">§9Blue §7Revamp §8§f128x§8</span>
-</button></a>
-<br><br>
-<a href="assets/PACKS/188/nw/! §9Excel 16x§8.zip"><button style="scale: 0.7">
-    <span class="rendercolors">§9Excel 16x§8</span>
-</button></a>
-<br><br>
-<a href="assets/PACKS/188/nw/! §aEter§2nity §8[§f16x§8] Black.zip"><button style="scale: 0.7">
-    <span class="rendercolors">§aEter§2nity §8[§f16x§8] Black</span>
-</button></a>
-<br><br>
-<a href="assets/PACKS/188/nw/! §bDynamic §7Duo §8Revamp §8[§732x§8].zip"><button style="scale: 0.7">
-    <span class="rendercolors">§bDynamic §7Duo §8Revamp §8[§732x§8]</span>
-</button></a>
-<br><br>
-<a href="assets/PACKS/188/nw/! §bWAR §8V2 §8[§f64x§8].zip"><button style="scale: 0.7">
-    <span class="rendercolors">§bWAR §8V2 §8[§f64x§8]</span>
-</button></a>
-<br><br>
-<a href="assets/PACKS/188/nw/! §b§l§oDanfault §f§l§o16x.zip"><button style="scale: 0.7">
-    <span class="rendercolors">§b§l§oDanfault §f§l§o16x</span>
-</button></a>
-<br><br>
-<a href="assets/PACKS/188/nw/5WubeFault_d16x.zip"><button style="scale: 0.7">
-    <span class="rendercolors">5WubeFault_d16x</span>
-</button></a>
-<br><br>
-<a href="assets/PACKS/188/nw/9Azure §f[64x].zip"><button style="scale: 0.7">
-    <span class="rendercolors">9Azure §f[64x]</span>
-</button></a>
-
-
-<br><br>
-<u>worlds 1.8.9</u><br><br>
-<a href="assets/worlds!/188/texturepacktesting.epk"><button style="scale: 0.7">
-
-    texture pack testing world
-
-</button></a><br><br>
-    <u>texture packs 1.5.2</u><br><br>
-
-
-    <a href="assets/PACKS/152/Gaha-Texture-Pack.zip"><button style="scale: 0.7">
-
-        Gaha-Texture-Pack
+    <a href="assets/PACKS/188/§eZoudy§6Fault §7[§616x§7].zip"><button style="scale: 0.7">
+    
+        <span style="color:#ffff55;">Zoudy</span><span style="color:#ffaa00">Fault</span> <span style="color:#aaa">[</span><span style="color:#ffaa00">16x</span><span style="color:#aaa">]</span>
     
     </button></a><br><br>
     
-<a href="assets/PACKS/152/Marchios REALISTIC TOOLS.zip"><button style="scale: 0.7">
-
-    Marchios REALISTIC TOOLS
-
-</button></a><br><br>
-
-<a href="assets/PACKS/152/Pinky4341's Continuation.zip"><button style="scale: 0.7">
-
-    Pinky4341's Continuation
-
-</button></a><br><br>
-<u>Texture packs alpha 1.2.6</u><br><br>
-<a href="assets/PACKS/a126/jappa-textures-a1-2-6-emii.zip"><button style="scale: 0.7">
-
-    jappa-textures-a1-2-6-emii
-
-</button></a><br><br>
-<a href="assets/PACKS/a126/newtex-alpha.zip"><button style="scale: 0.7">
-
-    newtex-alpha
-
-</button></a><br><br>
-
-
+    <a href="assets/PACKS/188/easyblockspvp-e3380.zip"><button style="scale: 0.7">
+    
+        easyblockspvp-e3380
+    
+    </button></a>
+    <br><br>
+    <a href="assets/PACKS/188/Bare Bones 1.8.9.zip"><button style="scale: 0.7">
+    
+        Bare Bones 1.8.9
+    
+    </button></a>
+    <br><br>
+    <a href="assets/PACKS/188/nw/!                 §5tóxica §816x.zip"><button style="scale: 0.7">
+        <span class="rendercolors">§5tóxica §816x</span>
+    </button></a>
+    <br><br>
+    <a href="assets/PACKS/188/nw/!               §4Spider§f-§1Man§4[§f§lPACK§1] §8.zip"><button style="scale: 0.7">
+        <span class="rendercolors">§4Spider§f-§1Man§4[§f§lPACK§1] §8</span>
+    </button></a>
+    <br><br>
+    <a href="assets/PACKS/188/nw/!         §6Vap§corw§5ave §1[§f16x§1].zip"><button style="scale: 0.7">
+        <span class="rendercolors">§6Vap§corw§5ave §1[§f16x§1]</span>
+    </button></a>
+    <br><br>
+    <a href="assets/PACKS/188/nw/!         §b§lBombies §8[§f180k§8].zip"><button style="scale: 0.7">
+        <span class="rendercolors">§b§lBombies §8[§f180k§8]</span>
+    </button></a>
+    <br><br>
+    <a href="assets/PACKS/188/nw/!       §b§l§oTofault §f§l§o16x.zip"><button style="scale: 0.7">
+        <span class="rendercolors">§b§l§oTofault §f§l§o16x</span>
+    </button></a>
+    <br><br>
+    <a href="assets/PACKS/188/nw/!      §bnebu§3l§ba §8[§f16§5x§8].zip"><button style="scale: 0.7">
+        <span class="rendercolors">§bnebu§3l§ba §8[§f16§5x§8]</span>
+    </button></a>
+    <br><br>
+    <a href="assets/PACKS/188/nw/!      §bnebu§3l§ba §8[§f32§5x§8].zip"><button style="scale: 0.7">
+        <span class="rendercolors">§bnebu§3l§ba §8[§f32§5x§8]</span>
+    </button></a>
+    <br><br>
+    <a href="assets/PACKS/188/nw/!      §fp§9rism §8[§f16§9x§8].zip"><button style="scale: 0.7">
+        <span class="rendercolors">§fp§9rism §8[§f16§9x§8]</span>
+    </button></a>
+    <br><br>
+    <a href="assets/PACKS/188/nw/!     §bfat cat §f[§b16§7x§f].zip"><button style="scale: 0.7">
+        <span class="rendercolors">§bfat cat §f[§b16§7x§f]</span>
+    </button></a>
+    <br><br>
+    <a href="assets/PACKS/188/nw/!  §5amethyst §8[§f16§5x§8].zip"><button style="scale: 0.7">
+        <span class="rendercolors">§5amethyst §8[§f16§5x§8]</span>
+    </button></a>
+    <br><br>
+    <a href="assets/PACKS/188/nw/!  §bxlexxd v3 §8[§f16x§8].zip"><button style="scale: 0.7">
+        <span class="rendercolors">§bxlexxd v3 §8[§f16x§8]</span>
+    </button></a>
+    <br><br>
+    <a href="assets/PACKS/188/nw/! §9Blue §7Revamp §8§f128x§8.zip"><button style="scale: 0.7">
+        <span class="rendercolors">§9Blue §7Revamp §8§f128x§8</span>
+    </button></a>
+    <br><br>
+    <a href="assets/PACKS/188/nw/! §9Excel 16x§8.zip"><button style="scale: 0.7">
+        <span class="rendercolors">§9Excel 16x§8</span>
+    </button></a>
+    <br><br>
+    <a href="assets/PACKS/188/nw/! §aEter§2nity §8[§f16x§8] Black.zip"><button style="scale: 0.7">
+        <span class="rendercolors">§aEter§2nity §8[§f16x§8] Black</span>
+    </button></a>
+    <br><br>
+    <a href="assets/PACKS/188/nw/! §bDynamic §7Duo §8Revamp §8[§732x§8].zip"><button style="scale: 0.7">
+        <span class="rendercolors">§bDynamic §7Duo §8Revamp §8[§732x§8]</span>
+    </button></a>
+    <br><br>
+    <a href="assets/PACKS/188/nw/! §bWAR §8V2 §8[§f64x§8].zip"><button style="scale: 0.7">
+        <span class="rendercolors">§bWAR §8V2 §8[§f64x§8]</span>
+    </button></a>
+    <br><br>
+    <a href="assets/PACKS/188/nw/! §b§l§oDanfault §f§l§o16x.zip"><button style="scale: 0.7">
+        <span class="rendercolors">§b§l§oDanfault §f§l§o16x</span>
+    </button></a>
+    <br><br>
+    <a href="assets/PACKS/188/nw/5WubeFault_d16x.zip"><button style="scale: 0.7">
+        <span class="rendercolors">5WubeFault_d16x</span>
+    </button></a>
+    <br><br>
+    <a href="assets/PACKS/188/nw/9Azure §f[64x].zip"><button style="scale: 0.7">
+        <span class="rendercolors">9Azure §f[64x]</span>
+    </button></a>
+    
+    
+    <br><br>
+    <u>worlds 1.8.9</u><br><br>
+    <a href="assets/worlds!/188/texturepacktesting.epk"><button style="scale: 0.7">
+    
+        texture pack testing world
+    
+    </button></a><br><br>
+        <u>texture packs 1.5.2</u><br><br>
+    
+    
+        <a href="assets/PACKS/152/Gaha-Texture-Pack.zip"><button style="scale: 0.7">
+    
+            Gaha-Texture-Pack
+        
+        </button></a><br><br>
+        
+    <a href="assets/PACKS/152/Marchios REALISTIC TOOLS.zip"><button style="scale: 0.7">
+    
+        Marchios REALISTIC TOOLS
+    
+    </button></a><br><br>
+    
+    <a href="assets/PACKS/152/Pinky4341's Continuation.zip"><button style="scale: 0.7">
+    
+        Pinky4341's Continuation
+    
+    </button></a><br><br>
+    <u>Texture packs alpha 1.2.6</u><br><br>
+    <a href="assets/PACKS/a126/jappa-textures-a1-2-6-emii.zip"><button style="scale: 0.7">
+    
+        jappa-textures-a1-2-6-emii
+    
+    </button></a><br><br>
+    <a href="assets/PACKS/a126/newtex-alpha.zip"><button style="scale: 0.7">
+    
+        newtex-alpha
+    
+    </button></a><br><br>
+    
+    
+    </div>
+    
+    
+    
+    </div>
 </div>
 
-
-
+</div>
     </div>
 
         <script src="assets/splashes.js"></script>
